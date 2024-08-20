@@ -1,0 +1,42 @@
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaverilista</title>
+</head>
+<body>
+    <header>Kaverilista</header>
+    <button id="kaveriLisays" onclick="lisays()">Lisää kaverit 10kpl</button>
+    <div id="div1">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    var nimet = [];
+
+function lisays() {
+    let count = 0;
+    const element = document.getElementById("div1");
+    
+
+    element.innerHTML = "";
+
+    while (count < 10) {
+        let kaverit = prompt("Lisää kaveri");
+        nimet.push(kaverit);
+        count = count + 1;
+    }
+    nimet.forEach((nimi, index) => {
+        const elementti = document.createElement("p");
+        const node = document.createTextNode((index + 1) + ". " + nimi);
+        elementti.appendChild(node);
+        element.appendChild(elementti);
+    });
+}
+
+
+
+</script>
